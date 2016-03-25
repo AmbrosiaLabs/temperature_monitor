@@ -14,9 +14,9 @@ defmodule TemperatureMonitor.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger],
+    [applications: [:logger, :exfswatch],
      mod: {TemperatureMonitor, []},
-     env: [filelist: []],
+     env: [filelist: [], base_path: "/tmp/sensors"],
      registered: [:temperature_monitor]
     ]
   end
@@ -31,6 +31,9 @@ defmodule TemperatureMonitor.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      # {:exfswatch, "~> 0.1.0"}
+      {:exfswatch, path: "../exfswatch" }
+    ]
   end
 end

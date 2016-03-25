@@ -6,7 +6,7 @@ defmodule TemperatureMonitor.SubSupervisor do
   end
 
   def init(stash_pid) do
-    child_processes = [ worker(TemperatureMonitor.Monitor, [stash_pid])]
+    child_processes = [ worker(TemperatureMonitor.TemperatureHandler, [stash_pid])]
     supervise child_processes, strategy: :one_for_one
   end
 end
