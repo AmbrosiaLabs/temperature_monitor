@@ -32,8 +32,7 @@ defmodule TemperatureMonitor.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      # {:exfswatch, "~> 0.1.0"}
-      {:exfswatch, path: "../exfswatch" }
+      {:exfswatch, "~> 0.1.0"}
     ]
   end
 end
